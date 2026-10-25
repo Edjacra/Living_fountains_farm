@@ -1,59 +1,49 @@
-# Image optimization checklist for Living Fountains Farm
 
-This checklist is meant to keep the site fast while preserving quality.
+/* -----------------------------------------------------------
+   Extra refinement pass for homepage polish and performance
+   ----------------------------------------------------------- */
 
-## 1. Resize before upload
-- Keep hero/banner images at or below 1600px wide.
-- Keep content/support images at or below 1200px wide.
-- Keep team/profile photos at or below 800px wide.
-- For thumbnails, aim for 400–700px wide.
+.hero-copy .eyebrow-badge {
+  margin-bottom: 20px;
+}
 
-## 2. Compress aggressively
-- For JPG: target quality between 60–75.
-- For PNG: only use when transparency is required.
-- Prefer WebP for modern browsers when possible.
-- If using JPG, set the export quality lower than the original camera file.
+.hero-copy h1 {
+  letter-spacing: -0.045em;
+}
 
-## 3. Use responsive image attributes
-Add these attributes to each important image:
-- `srcset`
-- `sizes`
-- `width`
-- `height`
-- `loading="lazy"` for non-critical images
-- `fetchpriority="high"` only on the above-the-fold hero image
+.hero-copy .hero-description {
+  font-size: 1.12rem;
+}
 
-## 4. Remove oversized uploads
-Current uploaded files in `Other Photos` are too heavy for the web and are slowing the site down.
-Recommended target per image:
-- Hero/banner: 150–500 KB
-- Product/farm photos: 80–250 KB
-- Team/profile photos: 40–120 KB
+.section-head h2 {
+  margin-bottom: 0.28em;
+}
 
-## 5. Replace these heavy originals with optimized versions
-- `Other Photos/Bahati-kwa-kunde.JPG`
-- `Other Photos/Dominic.JPG`
-- `Other Photos/Kamanda.JPG`
-- `Other Photos/Maria-na-kunde.JPG`
-- `Other Photos/Sheei-malenge.JPG`
+.card p,
+.value-tile p,
+.footer-brand-desc {
+  color: inherit;
+}
 
-## 6. Keep the browser-friendly set up
-- Load only the size needed for the user’s viewport.
-- Use `loading="lazy"` for all below-the-fold images.
-- Avoid loading giant full-resolution photos into cards or small sections.
-- Use `decoding="async"` on non-critical images.
+.card,
+.value-tile,
+.testimonial,
+.product-filter-bar {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
 
-## 7. Suggested workflow
-1. Export the photo from camera roll or original asset.
-2. Resize to the correct width.
-3. Compress to 60–75 quality.
-4. Convert to WebP if possible.
-5. Re-upload the optimized file to the site.
-6. Update the HTML `src` and `srcset` values.
-7. Test on mobile data before publishing.
+.footer-brand-desc {
+  max-width: 28ch;
+  line-height: 1.7;
+}
 
-## 8. Quick rule of thumb
-If a photo is bigger than 1 MB and sits in a card, gallery, or page hero, it is probably too heavy for a business website.
+@media (max-width: 760px) {
+  .hero-copy h1 {
+    letter-spacing: -0.033em;
+  }
 
-## 9. Best practice for this repo
-For all photography, target a single optimized version per image and keep the HTML explicit about dimensions. This will improve page speed and lower load time on slower connections.
+  .hero-copy .hero-description {
+    font-size: 1rem;
+  }
+}
